@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #0b0b0b;
+    color: #d1d1d1;
+    overflow-x: hidden;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #0b0b0b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loader h1 {
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.loader-bar {
+    width: 150px;
+    height: 3px;
+    background: #222;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    background: #fff;
+    animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+    from { left: -40px; }
+    to { left: 150px; }
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.discord-btn {
+    border: 1px solid #5865F2;
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #5865F2 !important;
+}
+
+.discord-btn:hover {
+    background: #5865F2;
+    color: white !important;
+}
+
+/* Content */
+.content {
+    padding-top: 120px;
+}
+
+/* Cards */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+/* Animations */
+.fade-in {
+    animation: fade 1s ease forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Particles */
+#particles {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
